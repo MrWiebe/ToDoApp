@@ -1,0 +1,7 @@
+extends ../layout
+
+block content
+  include ../mixins/todoForm
+  div.content
+    h3.form-header Update Item
+    +todoForm(item, `/item/edit/${item.id}`,'/')

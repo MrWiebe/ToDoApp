@@ -1,0 +1,21 @@
+extends ../layout
+
+include ../mixins/itemList
+
+block content
+  div.content
+    section
+      header.page-header All Todos
+
+    div.section-list
+      +itemList('Incomplete Items',incompleteItems)
+
+    div.button-row
+      a.button.primary(href="/item/add") Add New Item
+
+    div.section-list.completed
+      +itemList('Completed Items', completeItems)
+
+
+
+
