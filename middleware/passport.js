@@ -12,7 +12,7 @@ async function authenticate(username, password, done){
     if (!user || md5(password) !==user.password){
         return done(null, false, {message: 'Incorrect email or password.'});
     }
-    return done(numm, {
+    return done(null, {
         id: user.id,
         username: user.email,
         displayName: user.first_name
