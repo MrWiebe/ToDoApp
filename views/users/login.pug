@@ -3,7 +3,7 @@ extends ../layout
 block content
     div.contnet
         h3 Login
-        form(action='./login' method="post")
+        form(action='/login' method="post")
             div.input-form-row
                 div.input-container
                     label(for="email") Email
@@ -13,3 +13,5 @@ block content
                     input(type="text" name="password" id="password")
             div.form-button-row
                 button.button.primary(type="submit") Log In
+        if error
+            p.error=error
