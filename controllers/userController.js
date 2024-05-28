@@ -1,5 +1,6 @@
 const { User } = require('../models')
 const md5 = require('md5')
+const sha2 = require('sha2')
 const passport = require('passport');
 
 module.exports.renderRegistration = function (req, res){
@@ -19,7 +20,7 @@ module.exports.register = async function(req, res){
     } else {
         await User.create({
             email: req.body.email,
-            password: md5(req.body.password),
+            password: sha2.SHA512(req.body.password),
             first_name: req.body.first_name,
             last_name: req.body.last_name
         });
